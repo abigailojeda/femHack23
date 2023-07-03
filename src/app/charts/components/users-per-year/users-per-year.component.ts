@@ -72,7 +72,7 @@ export class UsersPerYearComponent implements OnInit {
         
         this.chart = {
           type: 'bar',
-          width: '600px',
+          width: '100%',
           height: '500px',
           animations: {
             enabled: true,

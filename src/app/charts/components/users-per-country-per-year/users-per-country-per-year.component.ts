@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { ChartsService } from '../../services/charts.service';
 import { ApexDataLabels } from 'ng-apexcharts';
 import {
@@ -21,26 +21,39 @@ export class USersPerCountryPerYearComponent implements OnInit {
   ];
   public yearsList: any = [];
 
-  public country = '';
-  public year = '';
+  public country = 'Spain';
+  public year = '2020';
   public usersNumber: number = 0;
   public chartSeries!: ApexAxisChartSeries;
   public chartXAxis!: ApexXAxis;
   public plotOptions!: ApexPlotOptions;
   public chart!: ApexChart;
+  public showYearsOptions:boolean =false
+  public showCountriesOptions:boolean =false
   dataLabels: ApexDataLabels = {
     enabled: false,
   };
   constructor(private chartsService: ChartsService) {
     this.initValues();
   }
+
+  @HostListener('document:click', ['$event.target'])
+  onClick(targetElement: HTMLElement) {
+    const isClickedCountry = targetElement.classList.contains('show-country');
+    this.showCountriesOptions = isClickedCountry;
+    const isClickedYear = targetElement.classList.contains('show-year');
+    this.showYearsOptions = isClickedYear;
+  }
+
+
   ngOnInit(): void {
     this.chartsService.getCountries().subscribe((countries: any) => {
       this.countries = countries.Countries;
       this.countriesList = countries.Countries;
       this.yearsList = this.years;
-   
+      this.setChart()
     });
+
   }
 
   public initValues() {
@@ -74,7 +87,7 @@ export class USersPerCountryPerYearComponent implements OnInit {
     this.countriesList = this.countries.filter((country: any) =>
       country.toLowerCase().includes(this.country.toLowerCase())
     );
-    this.fetchData();
+    this.setChart();
   }
   filterYear(): void {
     const yearString = this.year.toString();
@@ -85,16 +98,15 @@ export class USersPerCountryPerYearComponent implements OnInit {
 
   public selectCountry(country: string) {
     this.country = country;
-    this.fetchData();
+    this.setChart();
   }
   public selectYear(year: string) {
     this.year = year;
-    this.fetchData();
+    this.setChart();
   }
 
-  fetchData(): void {
-    console.log(this.country);
-    console.log(this.year);
+  setChart(): void {
+   
     if (this.country != '' && this.year != '') {
       this.chartsService
         .getUsersByCountryAndYear(this.country, parseInt(this.year))
@@ -105,7 +117,7 @@ export class USersPerCountryPerYearComponent implements OnInit {
             this.initValues();
             this.chart = {
               type: 'bar',
-              width: '600px',
+              width: '100%',
               height: '500px',
               animations: {
                 enabled: true,

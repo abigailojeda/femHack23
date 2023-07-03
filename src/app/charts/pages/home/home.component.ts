@@ -7,9 +7,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
+  public sectionToShow : number = 0
+  public rightArrow:string='./assets/img/rightArrow.svg'
+  public leftArrow:string='./assets/img/leftArrow.svg'
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  public changeSectionToShow(section:number){
+    this.sectionToShow = section
+  }
+  public add(){
+    this.sectionToShow ++
+  }
+  public sustract(){
+    this.sectionToShow --
   }
 
 }

@@ -1,10 +1,17 @@
 @import "~leaflet/dist/leaflet.css";
-
+@import 'animate.css';
 
 *{
+    font-family: RobotoRegular;
+    color: #3c484f;
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    
+}
+
+body{
+    background-color: #e1e9ed;
 }
 
 .apexcharts-toolbar{

@@ -1,7 +1,53 @@
-<app-users-per-year></app-users-per-year>
+<!-- <app-menu (selectSection)="changeSectionToShow($event)"></app-menu> -->
 
-<app-users-per-country-per-year></app-users-per-country-per-year>
+<div class="page-cont">
+  <!-- <div [style]="' width: calc(100%-250px); margin-left:250px'" class="home-container"> -->
+  <div class="home-container">
+    <section class="home-cont">
+      <app-users-per-year *ngIf="sectionToShow === 0"></app-users-per-year>
+      <app-users-per-country-per-year
+        *ngIf="sectionToShow === 1"
+      ></app-users-per-country-per-year>
 
-<app-countries-ranking></app-countries-ranking>
+      <app-countries-ranking
+        *ngIf="sectionToShow === 2"
+      ></app-countries-ranking>
 
-<app-users-map></app-users-map>
+      <app-users-map *ngIf="sectionToShow === 3"></app-users-map>
+    </section>
+ 
+  </div>
+ 
+  <!-- <div
+  class="
+  {{ sectionToShow == 3 ? 'start' : '' }} 
+  {{ sectionToShow == 0 ? 'end' : '' }} 
+  {{ sectionToShow > 0 && sectionToShow < 3 ? 'full' : '' }} 
+  arrows-cont"
+>
+<div (click)="sustract()" *ngIf="sectionToShow > 0" class="arrow-item">
+    <img [src]="leftArrow" alt="-">
+    <span >atras</span>
+</div>
+<div (click)="add()" *ngIf="sectionToShow < 3" class="arrow-item">
+
+    <span >alante</span>
+    <img [src]="rightArrow" alt="-">
+
+</div> -->
+
+<div  class="
+{{ sectionToShow == 3 ? 'start' : '' }} 
+{{ sectionToShow == 0 ? 'end' : '' }} 
+{{ sectionToShow > 0 && sectionToShow < 3 ? 'full' : '' }} 
+arrows-cont">
+    <div (click)="sustract()" *ngIf="sectionToShow > 0" class="arrow-item"> <img [src]="leftArrow" alt="-">
+        <span >Previous</span></div>
+    <div (click)="add()" *ngIf="sectionToShow < 3" class="arrow-item"> <span >Next</span>
+        <img [src]="rightArrow" alt="-"></div>
+</div>
+</div>
+
+
+
+<!-- <app-footer></app-footer> -->

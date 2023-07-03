@@ -9,6 +9,7 @@ import { USersPerCountryPerYearComponent } from './components/users-per-country-
 import { FormsModule } from '@angular/forms';
 import { CountriesRankingComponent } from './components/countries-ranking/countries-ranking.component';
 import { UsersMapComponent } from './components/users-map/users-map.component';
+import { SharedModule } from '../shared/shared.module';
 @NgModule({
   declarations: [
     HomeComponent, 
@@ -21,6 +22,7 @@ import { UsersMapComponent } from './components/users-map/users-map.component';
     HttpClientModule,
     NgApexchartsModule,
     FormsModule,
+    SharedModule
     
   ],
 })

@@ -1,10 +1,15 @@
+<div class="text animate__animated animate__fadeInUp">
+  <h1>INTERNET USERS EVOLUTION</h1>
+  <p>Select country & year</p>
+</div>
+
 <div class="options-cont">
-  <section class="option">
-    <h1 (click)="country = ''">{{ country != "" ? country : "Select a country" }}</h1>
-    <div class="selector-cont"  >
-      <div class="selector">
-        <div class="input-cont">
-          <input
+  <section class="option show-country">
+    <h1 class="show-country" (click)="country = ''">{{ country != "" ? country : "Select a country" }}</h1>
+    <div class="selector-cont show-country" *ngIf="showCountriesOptions" >
+      <div class="selector show-country">
+        <div class="input-cont show-country">
+          <input class="show-country"
             (input)="filterCountries()"
             type="text"
             [(ngModel)]="country"
@@ -17,14 +22,14 @@
     </div>
   </section>
 
-  <section class="option">
-    <h1 (click)="year = ''">{{ year != "" ? year : "Select a year" }}</h1>
+  <section class="option show-year">
+    <h1 class="show-year" (click)="year = ''">{{ year != "" ? year : "Select a year" }}</h1>
 
-    <div class="selector-cont" >
-      <div class="selector" >
-        <div class="input-cont">
-          <input (input)="filterYear()" type="text" [(ngModel)]="year" />
-        </div>
+    <div *ngIf="showYearsOptions" class="selector-cont show-year" >
+      <div class="selector show-year" >
+        <!-- <div class="input-cont show-year">
+          <input class="show-year" (input)="filterYear()" type="text" [(ngModel)]="year" />
+        </div> -->
         <ng-container *ngFor="let year of yearsList">
           <span (click)="selectYear(year)">{{ year }}</span>
         </ng-container>
@@ -34,7 +39,7 @@
 </div>
 
 
-<div style="width: 100%; height: 800px; display: flex; justify-content: center">
+<div class="chart-cont">
   <apx-chart  *ngIf="chart"
     [series]="chartSeries"
     [chart]="chart"
