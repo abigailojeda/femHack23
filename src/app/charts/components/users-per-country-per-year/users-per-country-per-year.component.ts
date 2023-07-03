@@ -36,12 +36,10 @@ export class USersPerCountryPerYearComponent implements OnInit {
   }
   ngOnInit(): void {
     this.chartsService.getCountries().subscribe((countries: any) => {
-      // Aquí tienes la lista de países, puedes asignarla a una variable en tu componente
       this.countries = countries.Countries;
       this.countriesList = countries.Countries;
       this.yearsList = this.years;
-      // Asigna la lista de países a una variable en tu componente
-      // this.paises = countries;
+   
     });
   }
 
@@ -52,11 +50,11 @@ export class USersPerCountryPerYearComponent implements OnInit {
         borderRadius: 5,
         colors: {
           ranges: [
-            { from: 0, to: 10000000000000000, color: '#5a93c7' }, // Rango 1: color rojo
+            { from: 0, to: 10000000000000000, color: '#5a93c7' }, 
           ],
-          backgroundBarColors: ['#ccc'], // Color de fondo de las barras
-          backgroundBarOpacity: 0.8, // Opacidad de las barras de fondo
-          backgroundBarRadius: 5, // Radio de las esquinas de las barras de fondo
+          backgroundBarColors: ['#ccc'], 
+          backgroundBarOpacity: 0.8, 
+          backgroundBarRadius: 5, 
         },
       },
     };
@@ -123,11 +121,7 @@ export class USersPerCountryPerYearComponent implements OnInit {
             this.chartSeries[0].data = [this.usersNumber];
 
             this.chartXAxis.categories.push(this.usersNumber);
-          },
-
-          error: (error: any) => {
-            console.error('Error fetching user data:', error);
-          },
+          }
         });
     }
   }

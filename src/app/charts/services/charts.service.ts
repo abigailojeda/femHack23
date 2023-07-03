@@ -14,7 +14,7 @@ export class ChartsService {
   getUsersByYear(year: number): Observable<any> {
     return this.http.get(`${this.apiUrl}/internet-users/${year}`);
   }
-  //users x year ( specifying countrie )
+  //users x year ( specifying countries )
   getUsersAndCountries(year: number): Observable<any> {
     return this.http.get(`${this.apiUrl}/year/${year}`);
   }

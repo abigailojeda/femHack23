@@ -54,19 +54,18 @@ export class UsersPerYearComponent implements OnInit {
           users: response.Data.Total,
         }));
 
-        console.log(this.userData);
         this.plotOptions = {
           bar: {
             borderRadius: 5,
             colors: {
               ranges: [
-                { from: 0, to: 10000000000000000, color: '#674ea7' }, // Rango 1: color rojo
+                { from: 0, to: 10000000000000000, color: '#674ea7' }, 
              
                 
               ],
-              backgroundBarColors: ['#ccc'], // Color de fondo de las barras
-              backgroundBarOpacity: 0.8, // Opacidad de las barras de fondo
-              backgroundBarRadius: 5, // Radio de las esquinas de las barras de fondo
+              backgroundBarColors: ['#ccc'], 
+              backgroundBarOpacity: 0.8, 
+              backgroundBarRadius: 5, 
             },
           },
         };

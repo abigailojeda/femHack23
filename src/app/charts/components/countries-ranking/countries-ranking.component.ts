@@ -86,7 +86,7 @@ export class CountriesRankingComponent implements OnInit {
             }))
             .sort((a, b) => b.users - a.users)
             .slice(0, 10);
-          console.log(topCountries);
+
           this.initValues();
           this.chart = {
             type: 'bar',
