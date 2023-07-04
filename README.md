@@ -247,7 +247,27 @@ For this reason I have used a list of longitudes and latitudes of countries that
 }
 ```
 
-![](screenshots/mapTask.png)
+![](screenshots/mapTask.png)  
+
+```javascript
+Object.entries(countriesData).forEach(
+      ([countryName, countryCoordinates]: [string, number[]]) => {
+        const countryData = this.countries[countryName];
+
+        if (countryData) {
+          const internetUsersNumber = countryData.internet_users_number;
+          const [lat, lon] = countryCoordinates;
+
+          const marker = L.marker([lat, lon], { icon: markerIcon }).addTo(
+            this.map!
+          );
+          marker.bindTooltip(
+            `${countryName}: ${internetUsersNumber.toLocaleString()}`
+          );
+        }
+      }
+    );
+```
 ---
 
 🙋🏻‍♀️[Abigail Ojeda Alonso](https://es.linkedin.com/in/abigail-ojeda)
