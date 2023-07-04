@@ -154,7 +154,9 @@ this.chartsService
 });
 ``` 
 
-![](screenshots/firstTask.png)
+![](screenshots/firstTask.png)  
+
+I have decided that this graph is shown when clicking on a button to invite the user to interact and to see the animation of the graph, which is only executed when it is rendered
 
 ### ➜ CHART 2 : Internet Users x Year x Country
 
