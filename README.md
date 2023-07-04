@@ -40,8 +40,8 @@ I have developed the frontend with [Angular](https://angular.io/) v14
 ➜ RxJS  
 ➜ Pipes
 
-➜ [Apexcharts](https://apexcharts.com/)
-➜ [Leaflet](https://leafletjs.com/)
+➜ [Apexcharts](https://apexcharts.com/)  
+➜ [Leaflet](https://leafletjs.com/)  
 ➜ [Animate.css](https://animate.style/)  
 
 ---
