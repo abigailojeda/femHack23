@@ -24,8 +24,8 @@ To carry out this challenge I used the [backend](https://github.com/nuwe-reports
 ➜ Clone project :  git clone "https://github.com/abigailojeda/femHack23.git" .  
 ➜ 💁🏻 Tip: With the "." at the end you specify that you want the project to be cloned in that folder, and not create a new folder inside it to save the cloned project   
 
-Once you have the cloned project you will only have to execute in your console the commands jddk andhdjd
-➜ npm i
+Once you have the cloned project you will only have to execute in your console the commands  
+➜ npm i  
 ➜ npm start
 
 ---
