@@ -246,6 +246,8 @@ For this reason I have used a list of longitudes and latitudes of countries that
       //...
 }
 ```
+
+![](screenshots/mapTask.png)
 ---
 
 🙋🏻‍♀️[Abigail Ojeda Alonso](https://es.linkedin.com/in/abigail-ojeda)
