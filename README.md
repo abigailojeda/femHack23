@@ -250,7 +250,18 @@ For this reason I have used a list of longitudes and latitudes of countries that
 ![](screenshots/mapTask.png)  
 
 ```javascript
-Object.entries(countriesData).forEach(
+  public setUsers() {
+    this.chartsService
+      .getUsersAndCountries(parseInt(this.year))
+      .subscribe((response) => {
+        this.countries = response.Data;
+        this.addMarkers();
+      });
+  }
+
+  public addMarkers(): void {
+  //...
+  Object.entries(countriesData).forEach(
       ([countryName, countryCoordinates]: [string, number[]]) => {
         const countryData = this.countries[countryName];
 
@@ -268,6 +279,9 @@ Object.entries(countriesData).forEach(
       }
     );
 ```
+
+In the object of countries with coordinates I access the number of users corresponding to each country in the object that I have previously saved from the request to the back, and with that data I create a marker on the map for each country.  
+🐛 A small bug: when selecting country or year the data is updated. However when selecting the year I wanted to make an animation to show that there has been a change in the data but I didn't have time to do it. It may look like a bug but actually what happens is that the transition is not noticeable
 ---
 
 🙋🏻‍♀️[Abigail Ojeda Alonso](https://es.linkedin.com/in/abigail-ojeda)
