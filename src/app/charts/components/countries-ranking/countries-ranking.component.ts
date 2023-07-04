@@ -59,12 +59,18 @@ export class CountriesRankingComponent implements OnInit {
     };
     this.chartXAxis = {
       categories: [],
+      labels: {
+        style: {
+          colors: '#ffffff'
+        }
+      }
     };
 
     this.chartSeries = [
       {
         name: 'Users',
         data: [],
+        color: '#ffffff'
       },
     ];
   }
@@ -97,8 +103,9 @@ export class CountriesRankingComponent implements OnInit {
           this.initValues();
           this.chart = {
             type: 'bar',
-            width: '600px',
+            width: '80%',
             height: '500px',
+            foreColor: '#ffffff',
             animations: {
               enabled: true,
               easing: 'linear',
@@ -112,6 +119,7 @@ export class CountriesRankingComponent implements OnInit {
           };
           this.chartXAxis.categories = topCountries.map((data) => data.country);
           this.chartSeries[0].data = topCountries.map((data) => data.users);
+          this.chartSeries[0].data.fill
         },
 
         error: (error: any) => {

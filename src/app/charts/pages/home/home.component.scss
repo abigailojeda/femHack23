@@ -27,7 +27,7 @@
       .illustration {
         position: relative;
         width: 50%;
-        top: -600px;
+        top: -650px;
       }
     }
     .home-cont {
@@ -81,6 +81,21 @@
     }
   }
 }
+
+@media (max-width: 900px) {
+  .page-cont {
+
+  .home-container {
+ .header-img {
+   display: none;
+    // .illustration {
+     
+    // }
+  }
+  }
+}
+}
+
 
 @media (max-width: 900px) {
   .page-cont {

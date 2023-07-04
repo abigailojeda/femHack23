@@ -41,5 +41,36 @@
         color: #eeeda0;
       }
     }
+
+    .divider{
+      font-weight: lighter;
+      font-family: roboto;
+      font-size: 40px;
+    }
+  }
+}
+
+
+@media (max-width: 900px) {
+  .text-top {
+    display: none;
+  }
+
+  .footer-cont {
+    .copy-text {
+
+      width: 80%;
+      text-align: center;
+    
+    flex-direction: column;
+    }
+
+    h1{
+      margin-bottom: 20px;
+    }
+
+    .divider{
+      display: none;
+    }
   }
 }

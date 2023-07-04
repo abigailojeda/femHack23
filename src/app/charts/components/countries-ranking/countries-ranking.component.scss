@@ -141,8 +141,40 @@
   }
 
   .chart-cont {
-   // width: 50%;
+   width: 50%;
     margin-top: 20px;
     padding-left: 50px;
   }
+}
+
+@media (max-width: 900px) {
+  .data-content {
+    top: 0;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+   
+      .text-content {
+        width: 100%;
+        padding: 20px;
+        padding: 70px 0 0 50px;
+        .text {
+          margin-bottom: 60px;
+          width: 100%;
+        h1 {
+          font-size: 30px;
+          width: 90%;
+        }
+      }
+    }
+    .chart-cont {
+      // width: 50%;
+       margin-top: 20px;
+       padding-left: 0;
+       width: 100%;
+     }
+  }
+
+ 
 }
