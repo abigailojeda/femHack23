@@ -1,27 +1,102 @@
-# Femhackfront
+# International FemHack Vol.II 👩🏻‍💻📊 - Frontend Challenge
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.0.3.
+The Frontend FemHack Challenge organized by nuwe in this III edition consisted in developing a landing page to show data visualization in an attractive way. 
+To carry out this challenge I used the [backend](https://github.com/nuwe-reports/femhack-II-frontend-challenge) that they have provided, and the tasks consisted of making requests to the backend endopints and display the data in graphs.
+---
 
-## Development server
+![](screenshots/header.png)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+---
 
-## Code scaffolding
+![](screenshots/responsive.png)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+---
 
-## Build
+## 📂 What do you need to have installed on your computer?
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+➜ [Docker](https://www.docker.com/)  
+➜ Node [LTS Version](https://nodejs.org/en/)  
+➜ Angular: npm install -g @angular/cli  
+  
+## ⚙️💾 Download & Settings to test the frontend   
 
-## Running unit tests
+➜ Create a folder for the project and run
+➜ Clone project :  git clone "https://github.com/abigailojeda/femHack23.git" .  
+➜ 💁🏻 Tip: With the "." at the end you specify that you want the project to be cloned in that folder, and not create a new folder inside it to save the cloned project   
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Once you have the cloned project you will only have to execute in your console the commands jddk andhdjd
+➜ npm i
+➜ npm start
 
-## Running end-to-end tests
+---
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+### 📚 This project use:
 
-## Further help
+I have developed the frontend with [Angular](https://angular.io/) v14
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+➜ Lazy loading modules  
+➜ RxJS  
+➜ Pipes
+
+➜ [Apexcharts](https://apexcharts.com/)
+➜ [Leaflet](https://leafletjs.com/)
+➜ [Animate.css](https://animate.style/)  
+
+---
+### 🎨 Design resources:
+
+➜ [Roboto font - Google fonts](https://fonts.google.com/specimen/Roboto?query=roboto)
+➜ [Opensource illustrations](https://undraw.co/search)
+➜ [CSS background patterns](https://www.magicpattern.design/tools/css-backgrounds)  
+➜ [Nice gradients for css backgrounds](https://webgradients.com/)  
+➜ [svg icons](https://heroicons.com/)  
+➜ [emojis for README](https://emojidb.org/unicorn-emojis)  
+➜ [mockup image](https://www.pexels.com/es-es/foto/mano-telefono-inteligente-maqueta-telefono-movil-6612388/)  
+
+---
+
+## 🔎 what will you find in this project?
+
+### ➜ CHART 1 : Internet Users x Year
+
+![](screenshots/firstTask.png)
+
+### ➜ CHART 2 : Internet Users x Year x Country
+
+![](screenshots/secondTask.png)
+
+### ➜ CHART 3 : Top 10 Countries using internet x Year
+
+![](screenshots/thirdTask.png)
+
+### ➜ TAKS 2 : Animations
+
+One of the objectives of this challenge was to animate the graphics to make them more attractive to the user. The apexcharts library allows to configure the animation that the graphic will show when rendered:
+
+```javascript
+this.chart = {
+  type: "bar",
+
+    ...
+
+  animations: {
+    enabled: true,
+    easing: "linear",
+    speed: 2000,
+
+    dynamicAnimation: {
+      enabled: true,
+      speed: 2000,
+    },
+  },
+};
+```  
+  
+On the other hand, Animate.css is very easy to use and has very good results for animating web page elements. In this case I have used it to animate the title of the header.  
+
+### ➜ TAKS 3 : World map data visualization  
+
+![](screenshots/mapTask.png)
+---
+
+🙋🏻‍♀️ [Abigail Ojeda Alonso](https://es.linkedin.com/in/abigail-ojeda)
