@@ -69,7 +69,7 @@ I have developed the frontend with [Angular](https://angular.io/) v14
 
 ---
 
-## 🔎 what will you find in this project?
+# 📝 TASKS
 
 ### ➜ CHART 1 : Internet Users x Year
 
