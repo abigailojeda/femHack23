@@ -184,7 +184,27 @@ In this case I start the component with the data obtained with a default country
 
 ![](screenshots/secondTask.png)
 
-### ➜ CHART 3 : Top 10 Countries using internet x Year
+### ➜ CHART 3 : Top 10 Countries using internet x Year  
+
+For this graph I obtain the data for a given year and sort the countries of the response by number of users using the sort() function and finally I am left with the ten with the most users  
+
+```javascript
+  this.chartsService.getUsersAndCountries(parseInt(this.year)).subscribe({
+        next: (res: any) => {
+          const countriesData = res.Data;
+
+          const topCountries = Object.keys(countriesData)
+            .map((country: string) => ({
+              country,
+              users: countriesData[country].internet_users_number,
+            }))
+            .sort((a, b) => b.users - a.users)
+            .slice(0, 10);
+          //...
+      });
+```  
+
+As in the previous graph, the user can change the year to make a new request
 
 ![](screenshots/thirdTask.png)
 
