@@ -105,7 +105,54 @@ export class ChartsService {
 }
 ```
 
-### ➜ CHART 1 : Internet Users x Year
+### ➜ CHART 1 : Internet Users x Year  
+
+For this first task I simply make a request to which I subscribe, and when the response arrives I configure the graph with the received data.  
+
+```javascript
+this.chartsService
+      .getUsersForMultipleYears(this.years)
+      .subscribe((res: any[]) => {
+        this.userData = res.map((response, index) => ({
+          year: this.years[index],
+          users: response.Data.Total,
+        }));
+
+        this.plotOptions = {
+          bar: {
+            borderRadius: 5,
+            colors: {
+              ranges: [{ from: 0, to: 10000000000000000, color: '#a75094' }],
+              backgroundBarColors: ['#a75094'],
+              backgroundBarOpacity: 0.2,
+              backgroundBarRadius: 5,
+            },
+          },
+        };
+
+        this.chart = {
+          type: 'bar',
+          width: '80%',
+          height: '500px',
+          animations: {
+            enabled: true,
+            easing: 'linear',
+            speed: 2000,
+
+            dynamicAnimation: {
+              enabled: true,
+              speed: 2000,
+            },
+          },
+        };
+        this.chartSeries[0].data = this.userData.map((data) =>
+          data.users.toLocaleString()
+        );
+        this.userData.map((data) =>
+          this.chartXAxis.categories.push(data.year.toString())
+        );
+});
+``` 
 
 ![](screenshots/firstTask.png)
 
