@@ -113,4 +113,4 @@ On the other hand, Animate.css is very easy to use and has very good results for
 ![](screenshots/mapTask.png)
 ---
 
-🙋🏻‍♀️ [Abigail Ojeda Alonso](https://es.linkedin.com/in/abigail-ojeda)
+🙋🏻‍♀️[Abigail Ojeda Alonso](https://es.linkedin.com/in/abigail-ojeda)
