@@ -158,7 +158,29 @@ I have decided that this graph is shown when clicking on a button to invite the 
 ![](screenshots/firstTask.png)  
 
 
-### ➜ CHART 2 : Internet Users x Year x Country
+### ➜ CHART 2 : Internet Users x Year x Country  
+
+In this case I start the component with the data obtained with a default country and year of the service and the user can change the country or year using a dropdown and the data is updated with his choice by redoing the request.  
+```javascript
+  ngOnInit(): void {
+  //...
+   this.setChart()
+  });
+
+  public selectCountry(country: string) {
+    this.country = country;
+    this.setChart();
+  }
+
+  public selectYear(year: string) {
+    this.year = year;
+    this.setChart();
+  }
+
+  setChart(): void {
+  //...
+  }
+```
 
 ![](screenshots/secondTask.png)
 
