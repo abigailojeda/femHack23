@@ -1,10 +1,10 @@
 #👩🏻‍💻 International FemHack Vol.II 📊 - Frontend Challenge  
 ---
+
+![](screenshots/header.png)  
+
 The Frontend FemHack Challenge organized by nuwe in this III edition consisted in developing a landing page to show data visualization in an attractive way. 
 To carry out this challenge I used the [backend](https://github.com/nuwe-reports/femhack-II-frontend-challenge) that they have provided, and the tasks consisted of making requests to the backend endopints and display the data in graphs.
----
-
-![](screenshots/header.png)
 
 ---
 
