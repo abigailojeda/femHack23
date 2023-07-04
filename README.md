@@ -69,7 +69,42 @@ I have developed the frontend with [Angular](https://angular.io/) v14
 
 ---
 
-# 📝 TASKS
+# 📝 TASKS  
+
+
+I created a component for each task and handled the data with a service to make the requests with HttpClient  
+
+```javascript
+export class ChartsService {
+  private apiUrl:string= environment.url;
+
+  constructor(private http: HttpClient) {}
+
+  //users x year ( all the world )
+  getUsersByYear(year: number): Observable<any> {
+    return this.http.get(`${this.apiUrl}/internet-users/${year}`);
+  }
+  //users x year ( specifying countries )
+  getUsersAndCountries(year: number): Observable<any> {
+    return this.http.get(`${this.apiUrl}/year/${year}`);
+  }
+
+  getUsersForMultipleYears(years: number[]): Observable<any[]> {
+    const requests: Observable<any>[] = years.map((year) => this.getUsersByYear(year));
+    return forkJoin(requests);
+  }
+
+  //countries
+  getCountries(): Observable<any> {
+    return this.http.get(`${this.apiUrl}/countries`);
+  }
+  
+  //users x year x country
+  getUsersByCountryAndYear(country: string, year: number): Observable<any> {
+    return this.http.get(`${this.apiUrl}/country/${country}/year/${year}`);
+  }
+}
+```
 
 ### ➜ CHART 1 : Internet Users x Year
 
