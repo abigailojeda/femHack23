@@ -1,0 +1,45 @@
+.footer-cont {
+  background-color: #3f425b;
+  position: relative;
+  padding: 100px 0 50px 0;
+  width: 100%;
+  display: flex;
+  position: relative;
+
+  .text-top {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    top: -200px;
+    font-size: 30px;
+  }
+  .copy-text {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+
+    h1,
+    a,
+    span {
+      font-size: 16px;
+      color: #fff;
+      font-weight: bold;
+    }
+    h1 {
+      margin-right: 0.5em;
+    }
+
+    a {
+      text-decoration: none;
+
+      color: #f5f244;
+      margin: 0 0.5em;
+
+      &:hover {
+        color: #eeeda0;
+      }
+    }
+  }
+}

@@ -28,9 +28,12 @@ export class UsersPerYearComponent implements OnInit {
   public chartXAxis: ApexXAxis;
   public plotOptions!: ApexPlotOptions;
   public chart!: ApexChart;
+  public bgImage: string = './assets/img/1.jpg';
   dataLabels: ApexDataLabels = {
     enabled: false,
   };
+
+  public showChart: boolean = false;
 
   constructor(private chartsService: ChartsService) {
     this.chartXAxis = {
@@ -58,21 +61,17 @@ export class UsersPerYearComponent implements OnInit {
           bar: {
             borderRadius: 5,
             colors: {
-              ranges: [
-                { from: 0, to: 10000000000000000, color: '#674ea7' }, 
-             
-                
-              ],
-              backgroundBarColors: ['#ccc'], 
-              backgroundBarOpacity: 0.8, 
-              backgroundBarRadius: 5, 
+              ranges: [{ from: 0, to: 10000000000000000, color: '#a75094' }],
+              backgroundBarColors: ['#a75094'],
+              backgroundBarOpacity: 0.2,
+              backgroundBarRadius: 5,
             },
           },
         };
-        
+
         this.chart = {
           type: 'bar',
-          width: '100%',
+          width: '80%',
           height: '500px',
           animations: {
             enabled: true,
@@ -85,10 +84,16 @@ export class UsersPerYearComponent implements OnInit {
             },
           },
         };
-        this.chartSeries[0].data = this.userData.map((data) => data.users);
+        this.chartSeries[0].data = this.userData.map((data) =>
+          data.users.toLocaleString()
+        );
         this.userData.map((data) =>
           this.chartXAxis.categories.push(data.year.toString())
         );
       });
+  }
+
+  public displayChart() {
+    this.showChart = true;
   }
 }

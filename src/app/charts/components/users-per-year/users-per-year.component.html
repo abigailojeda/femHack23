@@ -1,15 +1,34 @@
-<div class="data-cont">
-  <div class="text animate__animated animate__fadeInUp">
-    <h1>INTERNET USERS EVOLUTION</h1>
-    <p>Internet users last decade</p>
+<section class="flex-container">
+  <div class="text">
+    <div class="text-content">
+      <h1>
+        Internet users in the last decade
+      </h1>
+
+      <p>
+        Do you know how many users could access the Internet per year?
+      </p>
+    </div>
   </div>
 
-  <apx-chart
-    *ngIf="chart"
-    [series]="chartSeries"
-    [chart]="chart"
-    [xaxis]="chartXAxis"
-    [dataLabels]="dataLabels"
-    [plotOptions]="plotOptions"
-  ></apx-chart>
-</div>
+  <div class="{{!showChart ? 'flex' : ''}} data-cont">
+    <div
+      (click)="displayChart()"
+      class="show-btn"
+      *ngIf="!showChart"
+    >
+      <span>Show me</span>
+
+      <div class="bg"></div>
+    </div>
+
+    <apx-chart
+      *ngIf="chart && showChart"
+      [series]="chartSeries"
+      [chart]="chart"
+      [xaxis]="chartXAxis"
+      [dataLabels]="dataLabels"
+      [plotOptions]="plotOptions"
+    ></apx-chart>
+  </div>
+</section>

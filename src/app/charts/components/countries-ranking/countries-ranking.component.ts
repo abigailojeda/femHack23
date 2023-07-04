@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { ChartsService } from '../../services/charts.service';
 import { ApexDataLabels } from 'ng-apexcharts';
 import {
@@ -18,7 +18,7 @@ export class CountriesRankingComponent implements OnInit {
     2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020,
   ];
   public yearsList: any = [];
-  public year = '';
+  public year = '2020';
   public usersNumber: number = 0;
   public chartSeries!: ApexAxisChartSeries;
   public chartXAxis!: ApexXAxis;
@@ -27,12 +27,22 @@ export class CountriesRankingComponent implements OnInit {
   dataLabels: ApexDataLabels = {
     enabled: false,
   };
+  public showYearsOptions:boolean =false
+
   constructor(private chartsService: ChartsService) {
     this.initValues();
   }
 
+  @HostListener('document:click', ['$event.target'])
+  onClick(targetElement: HTMLElement) {
+    const isClickedYear = targetElement.classList.contains('show-year-to-ranking');
+    this.showYearsOptions = isClickedYear;
+  }
+
+
   ngOnInit(): void {
     this.yearsList = this.years;
+    this.setChart();
   }
 
   public initValues() {
@@ -40,12 +50,10 @@ export class CountriesRankingComponent implements OnInit {
       bar: {
         borderRadius: 5,
         colors: {
-          ranges: [
-            { from: 0, to: 10000000000000000, color: '#5a93c7' }, // Rango 1: color rojo
-          ],
-          backgroundBarColors: ['#ccc'], // Color de fondo de las barras
-          backgroundBarOpacity: 0.8, // Opacidad de las barras de fondo
-          backgroundBarRadius: 5, // Radio de las esquinas de las barras de fondo
+          ranges: [{ from: 0, to: 10000000000000000, color: '#5a93c7' }],
+          backgroundBarColors: ['#76a7cb'],
+          backgroundBarOpacity: 0.3,
+          backgroundBarRadius: 5,
         },
       },
     };
@@ -69,16 +77,15 @@ export class CountriesRankingComponent implements OnInit {
 
   public selectYear(year: string) {
     this.year = year;
-    this.fetchData();
+    this.setChart();
   }
 
-  fetchData(): void {
+  setChart(): void {
     if (this.year != '') {
       this.chartsService.getUsersAndCountries(parseInt(this.year)).subscribe({
         next: (res: any) => {
           const countriesData = res.Data;
 
-          // Obtener los 10 países con mayor número de usuarios de Internet
           const topCountries = Object.keys(countriesData)
             .map((country: string) => ({
               country,

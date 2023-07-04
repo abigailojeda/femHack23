@@ -1,40 +1,45 @@
-<div class="options-cont">
-    <section class="option">
-      <h1 (click)="country = ''">{{ country != "" ? country : "Select a country" }}</h1>
-      <div class="selector-cont"  >
-        <div class="selector">
-          <div class="input-cont">
-            <input
+
+<section class="data-content">
+
+  <div class="text-content">
+    <div class="text">
+    <h1>internet users in {{country ? country : 'Europe'}} during {{year}}</h1>
+
+  <p>Change the selection</p>
+     <div class="options-cont">
+    <section class="option show-country-map">
+      <h2 class="show-country-map">{{ country != "" ? country : "Select a country" }}</h2>
+      <div class="selector-cont show-country-map" *ngIf="showCountriesOptions" >
+        <div class="selector show-country-map">
+          <div class="input-cont show-country-map">
+            <input class="show-country-map"
               (input)="filterCountries()"
               type="text"
               [(ngModel)]="country"
             />
           </div>
-          <ng-container *ngFor="let country of countriesList">
-            <span (click)="selectCountry(country)">{{ country }}</span>
-          </ng-container>
+            <span *ngFor="let country of countriesList" (click)="selectCountry(country)">{{ country }}</span>
         </div>
       </div>
     </section>
   
-    <section class="option">
-      <h1 (click)="year = ''">{{ year != "" ? year : "Select a year" }}</h1>
+    <section class="option show-year-map">
+      <h2 class="show-year-map">{{ year != "" ? year : "Select a year" }}</h2>
   
-      <div class="selector-cont" >
-        <div class="selector" >
-          <div class="input-cont">
-            <input (input)="filterYear()" type="text" [(ngModel)]="year" />
-          </div>
-          <ng-container *ngFor="let year of yearsList">
-            <span (click)="selectYear(year)">{{ year }}</span>
-          </ng-container>
+      <div class="selector-cont show-year-map" *ngIf="showYearsOptions" >
+        <div class="selector show-year-map">
+          
+            <span *ngFor="let year of yearsList" (click)="selectYear(year)">{{ year }}</span>
         </div>
       </div>
     </section>
+      </div>
   </div>
-  <div class="message" >Internet users on {{year}}</div>
+  </div>
 
-<div class="map-cont">
+  <div class="chart-cont">
     
     <div class="map" id="mapContainer" ></div>
 </div>
+
+</section>

@@ -39,9 +39,9 @@ export class USersPerCountryPerYearComponent implements OnInit {
 
   @HostListener('document:click', ['$event.target'])
   onClick(targetElement: HTMLElement) {
-    const isClickedCountry = targetElement.classList.contains('show-country');
+    const isClickedCountry = targetElement.classList.contains('show-country-per-year');
     this.showCountriesOptions = isClickedCountry;
-    const isClickedYear = targetElement.classList.contains('show-year');
+    const isClickedYear = targetElement.classList.contains('show-year-per-country');
     this.showYearsOptions = isClickedYear;
   }
 
@@ -63,10 +63,10 @@ export class USersPerCountryPerYearComponent implements OnInit {
         borderRadius: 5,
         colors: {
           ranges: [
-            { from: 0, to: 10000000000000000, color: '#5a93c7' }, 
+            { from: 0, to: 10000000000000000, color: '#8161b0' }, 
           ],
-          backgroundBarColors: ['#ccc'], 
-          backgroundBarOpacity: 0.8, 
+          backgroundBarColors: ['#8161b0'], 
+          backgroundBarOpacity: 0.3, 
           backgroundBarRadius: 5, 
         },
       },
@@ -112,12 +112,12 @@ export class USersPerCountryPerYearComponent implements OnInit {
         .getUsersByCountryAndYear(this.country, parseInt(this.year))
         .subscribe({
           next: (res: any) => {
-            this.usersNumber = res.Data[this.country].internet_users_number;
+            this.usersNumber = (res.Data[this.country].internet_users_number).toLocaleString();
 
             this.initValues();
             this.chart = {
               type: 'bar',
-              width: '100%',
+              width: '250px',
               height: '500px',
               animations: {
                 enabled: true,
