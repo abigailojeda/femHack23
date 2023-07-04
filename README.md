@@ -4,9 +4,21 @@ The Frontend FemHack Challenge organized by nuwe in this III edition consisted i
 To carry out this challenge I used the [backend](https://github.com/nuwe-reports/femhack-II-frontend-challenge) that they have provided, and the tasks consisted of making requests to the backend endopints and display the data in graphs.
 
 ![](screenshots/header.png)  
+  
+## Objectives achieved:
 
-The Frontend FemHack Challenge organized by nuwe in this III edition consisted in developing a landing page to show data visualization in an attractive way. 
-To carry out this challenge I used the [backend](https://github.com/nuwe-reports/femhack-II-frontend-challenge) that they have provided, and the tasks consisted of making requests to the backend endopints and display the data in graphs.
+➜ Manage the backend data to display them correctly  
+➜ Using a chart library  
+➜ Using a map library  
+➜ Displaying the layout result in a landing page
+➜ Develop a responsive layout  
+➜ Using a map library  
+➜ Use animations  
+  
+## Goals I didn't achieve:
+
+➜ I would have liked to have had more time to dedicate to the design and create something really visually stunning
+➜ I would have liked to make more interactive animations 
 
 ---
 
