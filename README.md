@@ -45,8 +45,8 @@ I have developed the frontend with [Angular](https://angular.io/) v14
 ---
 ### 🎨 Design resources:
 
-➜ [Roboto font - Google fonts](https://fonts.google.com/specimen/Roboto?query=roboto)
-➜ [Opensource illustrations](https://undraw.co/search)
+➜ [Roboto font - Google fonts](https://fonts.google.com/specimen/Roboto?query=roboto)  
+➜ [Opensource illustrations](https://undraw.co/search)  
 ➜ [CSS background patterns](https://www.magicpattern.design/tools/css-backgrounds)  
 ➜ [Nice gradients for css backgrounds](https://webgradients.com/)  
 ➜ [svg icons](https://heroicons.com/)  
