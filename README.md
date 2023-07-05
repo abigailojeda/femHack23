@@ -234,7 +234,7 @@ this.chart = {
 On the other hand, Animate.css is very easy to use and has very good results for animating web page elements. In this case I have used it to animate the title of the header.  
 
 ### ➜ TAKS 3 : World map data visualization  
-This task was an added difficulty by not providing the coordinates of the countries, since I did not find quality documentation to know how leaflet provides coordinates, apart from using the geocoder function, for which I would have to make a peition for each country and it is not optimal.
+This task was an added difficulty by not providing the coordinates of the countries, since I did not find quality documentation to know how leaflet provides coordinates, apart from using the geocoder function, for which I would have to make a request for each country and it is not optimal.
 For this reason I have used a list of longitudes and latitudes of countries that I had from a personal project and I have mocked it into a service  
 
 ```javascript
