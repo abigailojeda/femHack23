@@ -280,7 +280,7 @@ For this reason I have used a list of longitudes and latitudes of countries that
       }
     );
 ```
-In the object of countries with coordinates I access the number of users corresponding to each country in the object that I have previously saved from the request to the back, and with that data I create a marker on the map for each country.  
+In the object of countries with coordinates I access the number of users corresponding to each country in the object that I have previously saved from the backend request, and with that data I create a marker on the map for each country.  
 
 
 ---
